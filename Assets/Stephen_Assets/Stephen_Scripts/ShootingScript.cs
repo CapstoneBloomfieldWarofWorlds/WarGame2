@@ -23,7 +23,7 @@ public class ShootingScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-
+            Shoot();
         }
     }
 
