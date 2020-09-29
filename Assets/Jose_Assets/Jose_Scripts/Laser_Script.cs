@@ -9,7 +9,7 @@ public class Laser_Script : MonoBehaviour
     private RaycastHit objectHit;
 
 
-    public GameObject laserImpactEffect;
+    public GameObject bullet;
 
 
 
@@ -34,23 +34,13 @@ public class Laser_Script : MonoBehaviour
 
     void Shoot()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out objectHit, rayLenght,layerMask ))
-
-
-
-            
-       
-      
+        if (Physics.Raycast(transform.position, transform.forward, out objectHit, rayLenght, layerMask))
         {
+            GameObject ImpactGameObject = Instantiate(bullet, objectHit.point, transform.rotation);
+
+            Destroy(ImpactGameObject, 4F);
             print("I hit" + objectHit.collider.gameObject.name);
-            
         }
-
-        else
-        {
-            print("Miss!");
-        }
-
 
         Enemy enemyRef = objectHit.transform.GetComponent<Enemy>();
         {

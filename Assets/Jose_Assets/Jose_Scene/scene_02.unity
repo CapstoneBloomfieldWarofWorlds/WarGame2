@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.36207953, g: 0.365538, b: 0.33686253, a: 1}
+  m_IndirectSpecularColor: {r: 0.36207944, g: 0.36553797, b: 0.33686236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -35014,7 +35014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLenght: 20
   damage: 30
-  laserImpactEffect: {fileID: 0}
+  bullet: {fileID: 3183245332038449063, guid: 79b3c7a6d469aa446af57970424d1ce3, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 51
