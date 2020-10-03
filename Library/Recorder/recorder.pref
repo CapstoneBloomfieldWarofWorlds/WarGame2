@@ -23,6 +23,7 @@ MonoBehaviour:
   m_CapFrameRate: 1
   m_RecorderSettings:
   - {fileID: 2}
+  - {fileID: 3}
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 53
@@ -36,14 +37,14 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 2
+  take: 6
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
-      m_Root: 0
-      m_Leaf: /gameplay
+      m_Root: 5
+      m_Leaf: C:/Users/jose/Desktop
       m_ForceAssetFolder: 0
-    m_FileName: movie
+    m_FileName: PlayTest 4
   outputFormat: 0
   videoBitRateMode: 2
   captureAlpha: 0
@@ -104,3 +105,28 @@ MonoBehaviour:
       flipFinalOutput: 0
   m_AudioInputSettings:
     preserveAudio: 1
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f55b158f7c43688c1c21ce05ac46ba, type: 3}
+  m_Name: Animation Clip
+  m_EditorClassIdentifier: 
+  enabled: 0
+  take: 1
+  captureEveryNthFrame: 1
+  fileNameGenerator:
+    m_Path:
+      m_Root: 1
+      m_Leaf: Recordings
+      m_ForceAssetFolder: 1
+    m_FileName: animation_<GameObject>_<Take>
+  m_AnimationInputSettings:
+    m_BindingId: 
+    recursive: 1
+    bindingTypeNames: []

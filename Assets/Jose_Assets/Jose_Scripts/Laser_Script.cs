@@ -7,13 +7,16 @@ public class Laser_Script : MonoBehaviour
     public float rayLenght = 1f;
     public float damage;
     private RaycastHit objectHit;
+    public Transform endBarrel;
 
 
-    public GameObject bullet;
+   
 
 
 
     public LayerMask layerMask;
+
+    public GameObject laserImpactEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,25 +24,38 @@ public class Laser_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void  FixedUpdate()
+    void  Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * rayLenght, Color.blue);
+        Debug.DrawRay(endBarrel.position, endBarrel.forward * rayLenght, Color.blue);
 
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+
+           
+
         }
+
+       
     }
 
 
     void Shoot()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out objectHit, rayLenght, layerMask))
+        if (Physics.Raycast(endBarrel.position, transform.forward, out objectHit, rayLenght, layerMask))
         {
-            GameObject ImpactGameObject = Instantiate(bullet, objectHit.point, transform.rotation);
 
-            Destroy(ImpactGameObject, 4F);
+
+
             print("I hit" + objectHit.collider.gameObject.name);
+
+
+            
+        }
+
+        else
+        {
+            print("Miss!");
         }
 
         Enemy enemyRef = objectHit.transform.GetComponent<Enemy>();
@@ -49,6 +65,12 @@ public class Laser_Script : MonoBehaviour
                 enemyRef.TakeDamge(damage);
             }
         }
+
+        GameObject impactGameObject = Instantiate(laserImpactEffect, objectHit.point, transform.rotation);
+
+        Destroy(impactGameObject, 1f);
+
+        
 
         
 

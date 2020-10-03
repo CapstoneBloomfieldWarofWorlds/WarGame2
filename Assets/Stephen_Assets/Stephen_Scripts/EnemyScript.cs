@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    private float health = 40;
+    private float health ;
 
     void Start()
     {
@@ -23,7 +23,13 @@ public class EnemyScript : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
+          ;
         }  
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
